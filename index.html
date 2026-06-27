@@ -297,11 +297,16 @@
     }
 
     .piece-info {
+      display: grid;
+      gap: 10px;
+      padding: 15px 16px 16px;
+    }
+
+    .piece-title {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
       gap: 14px;
-      padding: 15px 16px;
     }
 
     .piece h3 {
@@ -309,10 +314,34 @@
       font-size: 18px;
     }
 
-    .piece span {
+    .piece-title span {
       color: var(--muted);
       font-size: 13px;
       white-space: nowrap;
+    }
+
+    .photo-meta {
+      display: grid;
+      gap: 4px;
+      margin: 0;
+      color: #57534c;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .photo-meta div {
+      display: flex;
+      gap: 8px;
+    }
+
+    .photo-meta dt {
+      min-width: 54px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .photo-meta dd {
+      margin: 0;
     }
 
     .lightbox {
@@ -437,7 +466,6 @@
         grid-template-rows: minmax(260px, 74vw) auto;
       }
 
-      .piece-info,
       .hours li {
         flex-direction: column;
         gap: 4px;
@@ -507,37 +535,79 @@
         <article class="piece">
           <a href="#photo-dsc-9292">
             <img class="piece-image" src="images/DSC_9292.jpg" alt="高清摄影作品 DSC_9292" loading="lazy">
-            <div class="piece-info"><h3>DSC_9292</h3><span>6048 x 4024</span></div>
+            <div class="piece-info">
+              <div class="piece-title"><h3>DSC_9292</h3><span>6048 x 4024</span></div>
+              <dl class="photo-meta">
+                <div><dt>时间</dt><dd>2026-04-27 17:28:55</dd></div>
+                <div><dt>相机</dt><dd>NIKON Z 6II</dd></div>
+                <div><dt>镜头</dt><dd>70-200mm f/2.8 · 102mm</dd></div>
+              </dl>
+            </div>
           </a>
         </article>
         <article class="piece">
           <a href="#photo-dsc-9293">
             <img class="piece-image" src="images/DSC_9293.jpg" alt="高清摄影作品 DSC_9293" loading="lazy">
-            <div class="piece-info"><h3>DSC_9293</h3><span>4024 x 6048</span></div>
+            <div class="piece-info">
+              <div class="piece-title"><h3>DSC_9293</h3><span>4024 x 6048</span></div>
+              <dl class="photo-meta">
+                <div><dt>时间</dt><dd>2026-04-27 17:29:18</dd></div>
+                <div><dt>相机</dt><dd>NIKON Z 6II</dd></div>
+                <div><dt>镜头</dt><dd>70-200mm f/2.8 · 116mm</dd></div>
+              </dl>
+            </div>
           </a>
         </article>
         <article class="piece">
           <a href="#photo-dsc-9301">
             <img class="piece-image" src="images/DSC_9301.jpg" alt="高清摄影作品 DSC_9301" loading="lazy">
-            <div class="piece-info"><h3>DSC_9301</h3><span>6048 x 4024</span></div>
+            <div class="piece-info">
+              <div class="piece-title"><h3>DSC_9301</h3><span>6048 x 4024</span></div>
+              <dl class="photo-meta">
+                <div><dt>时间</dt><dd>2026-04-27 17:30:08</dd></div>
+                <div><dt>相机</dt><dd>NIKON Z 6II</dd></div>
+                <div><dt>镜头</dt><dd>70-200mm f/2.8 · 70mm</dd></div>
+              </dl>
+            </div>
           </a>
         </article>
         <article class="piece">
           <a href="#photo-dsc-9303">
             <img class="piece-image" src="images/DSC_9303.jpg" alt="高清摄影作品 DSC_9303" loading="lazy">
-            <div class="piece-info"><h3>DSC_9303</h3><span>6048 x 4024</span></div>
+            <div class="piece-info">
+              <div class="piece-title"><h3>DSC_9303</h3><span>6048 x 4024</span></div>
+              <dl class="photo-meta">
+                <div><dt>时间</dt><dd>2026-04-27 17:30:08</dd></div>
+                <div><dt>相机</dt><dd>NIKON Z 6II</dd></div>
+                <div><dt>镜头</dt><dd>70-200mm f/2.8 · 70mm</dd></div>
+              </dl>
+            </div>
           </a>
         </article>
         <article class="piece">
           <a href="#photo-dsc-9304">
             <img class="piece-image" src="images/DSC_9304.jpg" alt="高清摄影作品 DSC_9304" loading="lazy">
-            <div class="piece-info"><h3>DSC_9304</h3><span>6048 x 4024</span></div>
+            <div class="piece-info">
+              <div class="piece-title"><h3>DSC_9304</h3><span>6048 x 4024</span></div>
+              <dl class="photo-meta">
+                <div><dt>时间</dt><dd>2026-04-27 17:30:11</dd></div>
+                <div><dt>相机</dt><dd>NIKON Z 6II</dd></div>
+                <div><dt>镜头</dt><dd>70-200mm f/2.8 · 70mm</dd></div>
+              </dl>
+            </div>
           </a>
         </article>
         <article class="piece">
           <a href="#photo-dsc-9307">
             <img class="piece-image" src="images/DSC_9307.jpg" alt="高清摄影作品 DSC_9307" loading="lazy">
-            <div class="piece-info"><h3>DSC_9307</h3><span>6048 x 4024</span></div>
+            <div class="piece-info">
+              <div class="piece-title"><h3>DSC_9307</h3><span>6048 x 4024</span></div>
+              <dl class="photo-meta">
+                <div><dt>时间</dt><dd>2026-04-27 17:30:12</dd></div>
+                <div><dt>相机</dt><dd>NIKON Z 6II</dd></div>
+                <div><dt>镜头</dt><dd>70-200mm f/2.8 · 70mm</dd></div>
+              </dl>
+            </div>
           </a>
         </article>
       </div>
@@ -561,27 +631,27 @@
   </footer>
 
   <section class="lightbox" id="photo-dsc-9292" aria-label="DSC_9292 高清预览">
-    <div class="lightbox-bar"><span class="lightbox-title">DSC_9292 · 6048 x 4024</span><span class="lightbox-actions"><a href="images/DSC_9292.jpg" target="_blank" rel="noopener">打开原图</a><a href="#collection">关闭</a></span></div>
+    <div class="lightbox-bar"><span class="lightbox-title">DSC_9292 · 2026-04-27 17:28:55 · NIKON Z 6II · 70-200mm f/2.8 at 102mm</span><span class="lightbox-actions"><a href="images/DSC_9292.jpg" target="_blank" rel="noopener">打开原图</a><a href="#collection">关闭</a></span></div>
     <div class="lightbox-stage"><img src="images/DSC_9292.jpg" alt="DSC_9292 高清摄影作品" loading="lazy"></div>
   </section>
   <section class="lightbox" id="photo-dsc-9293" aria-label="DSC_9293 高清预览">
-    <div class="lightbox-bar"><span class="lightbox-title">DSC_9293 · 4024 x 6048</span><span class="lightbox-actions"><a href="images/DSC_9293.jpg" target="_blank" rel="noopener">打开原图</a><a href="#collection">关闭</a></span></div>
+    <div class="lightbox-bar"><span class="lightbox-title">DSC_9293 · 2026-04-27 17:29:18 · NIKON Z 6II · 70-200mm f/2.8 at 116mm</span><span class="lightbox-actions"><a href="images/DSC_9293.jpg" target="_blank" rel="noopener">打开原图</a><a href="#collection">关闭</a></span></div>
     <div class="lightbox-stage"><img src="images/DSC_9293.jpg" alt="DSC_9293 高清摄影作品" loading="lazy"></div>
   </section>
   <section class="lightbox" id="photo-dsc-9301" aria-label="DSC_9301 高清预览">
-    <div class="lightbox-bar"><span class="lightbox-title">DSC_9301 · 6048 x 4024</span><span class="lightbox-actions"><a href="images/DSC_9301.jpg" target="_blank" rel="noopener">打开原图</a><a href="#collection">关闭</a></span></div>
+    <div class="lightbox-bar"><span class="lightbox-title">DSC_9301 · 2026-04-27 17:30:08 · NIKON Z 6II · 70-200mm f/2.8 at 70mm</span><span class="lightbox-actions"><a href="images/DSC_9301.jpg" target="_blank" rel="noopener">打开原图</a><a href="#collection">关闭</a></span></div>
     <div class="lightbox-stage"><img src="images/DSC_9301.jpg" alt="DSC_9301 高清摄影作品" loading="lazy"></div>
   </section>
   <section class="lightbox" id="photo-dsc-9303" aria-label="DSC_9303 高清预览">
-    <div class="lightbox-bar"><span class="lightbox-title">DSC_9303 · 6048 x 4024</span><span class="lightbox-actions"><a href="images/DSC_9303.jpg" target="_blank" rel="noopener">打开原图</a><a href="#collection">关闭</a></span></div>
+    <div class="lightbox-bar"><span class="lightbox-title">DSC_9303 · 2026-04-27 17:30:08 · NIKON Z 6II · 70-200mm f/2.8 at 70mm</span><span class="lightbox-actions"><a href="images/DSC_9303.jpg" target="_blank" rel="noopener">打开原图</a><a href="#collection">关闭</a></span></div>
     <div class="lightbox-stage"><img src="images/DSC_9303.jpg" alt="DSC_9303 高清摄影作品" loading="lazy"></div>
   </section>
   <section class="lightbox" id="photo-dsc-9304" aria-label="DSC_9304 高清预览">
-    <div class="lightbox-bar"><span class="lightbox-title">DSC_9304 · 6048 x 4024</span><span class="lightbox-actions"><a href="images/DSC_9304.jpg" target="_blank" rel="noopener">打开原图</a><a href="#collection">关闭</a></span></div>
+    <div class="lightbox-bar"><span class="lightbox-title">DSC_9304 · 2026-04-27 17:30:11 · NIKON Z 6II · 70-200mm f/2.8 at 70mm</span><span class="lightbox-actions"><a href="images/DSC_9304.jpg" target="_blank" rel="noopener">打开原图</a><a href="#collection">关闭</a></span></div>
     <div class="lightbox-stage"><img src="images/DSC_9304.jpg" alt="DSC_9304 高清摄影作品" loading="lazy"></div>
   </section>
   <section class="lightbox" id="photo-dsc-9307" aria-label="DSC_9307 高清预览">
-    <div class="lightbox-bar"><span class="lightbox-title">DSC_9307 · 6048 x 4024</span><span class="lightbox-actions"><a href="images/DSC_9307.jpg" target="_blank" rel="noopener">打开原图</a><a href="#collection">关闭</a></span></div>
+    <div class="lightbox-bar"><span class="lightbox-title">DSC_9307 · 2026-04-27 17:30:12 · NIKON Z 6II · 70-200mm f/2.8 at 70mm</span><span class="lightbox-actions"><a href="images/DSC_9307.jpg" target="_blank" rel="noopener">打开原图</a><a href="#collection">关闭</a></span></div>
     <div class="lightbox-stage"><img src="images/DSC_9307.jpg" alt="DSC_9307 高清摄影作品" loading="lazy"></div>
   </section>
 </body>
