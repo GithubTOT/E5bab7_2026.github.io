@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>网站美术馆</title>
-  <meta name="description" content="一个展示高清摄影作品的线上美术馆。">
+  <meta name="description" content="一个安静、现代的线上美术馆。">
   <style>
     :root {
-      --ink: #141414;
-      --muted: #6f6b64;
-      --paper: #f6f2ea;
+      --ink: #171717;
+      --muted: #686560;
+      --paper: #f7f3ec;
       --panel: #fffdf8;
-      --line: #d8d0c2;
-      --accent: #9f3831;
-      --green: #2d7672;
-      --shadow: 0 18px 48px rgba(32, 29, 24, 0.14);
+      --line: #d8d0c3;
+      --red: #b9473e;
+      --teal: #2f7d7a;
+      --gold: #c79a3b;
+      --shadow: 0 18px 45px rgba(39, 34, 26, 0.12);
     }
 
     * {
@@ -52,9 +53,9 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      padding: 16px clamp(18px, 4vw, 58px);
-      background: rgba(246, 242, 234, 0.9);
-      border-bottom: 1px solid rgba(216, 208, 194, 0.82);
+      padding: 18px clamp(18px, 4vw, 56px);
+      background: rgba(247, 243, 236, 0.88);
+      border-bottom: 1px solid rgba(216, 208, 195, 0.7);
       backdrop-filter: blur(14px);
     }
 
@@ -63,7 +64,7 @@
       align-items: center;
       gap: 12px;
       min-width: 0;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     .brand-mark {
@@ -73,13 +74,13 @@
       border: 2px solid var(--ink);
       background:
         linear-gradient(135deg, transparent 0 46%, var(--ink) 47% 53%, transparent 54%),
-        linear-gradient(90deg, var(--accent) 0 38%, #c99a38 38% 67%, var(--green) 67%);
+        linear-gradient(90deg, var(--red) 0 36%, var(--gold) 36% 66%, var(--teal) 66%);
       box-shadow: 4px 4px 0 var(--ink);
     }
 
     .nav {
       display: flex;
-      gap: clamp(12px, 3vw, 30px);
+      gap: clamp(12px, 3vw, 28px);
       color: var(--muted);
       font-size: 15px;
       white-space: nowrap;
@@ -89,13 +90,17 @@
       color: var(--ink);
     }
 
+    main {
+      overflow: hidden;
+    }
+
     .hero {
-      min-height: calc(100vh - 67px);
+      min-height: calc(100vh - 72px);
       display: grid;
-      grid-template-columns: minmax(0, 0.86fr) minmax(340px, 1.14fr);
+      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
       align-items: center;
-      gap: clamp(28px, 5vw, 74px);
-      padding: clamp(34px, 5vw, 76px) clamp(18px, 5vw, 76px) 42px;
+      gap: clamp(28px, 5vw, 78px);
+      padding: clamp(38px, 6vw, 86px) clamp(18px, 5vw, 76px) 48px;
     }
 
     .hero-copy {
@@ -103,24 +108,24 @@
     }
 
     .eyebrow {
-      margin: 0 0 14px;
-      color: var(--green);
+      margin: 0 0 16px;
+      color: var(--teal);
       font-size: 14px;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     h1 {
       margin: 0;
       max-width: 720px;
-      font-size: clamp(42px, 7vw, 88px);
-      line-height: 0.96;
+      font-size: clamp(42px, 7vw, 92px);
+      line-height: 0.95;
       letter-spacing: 0;
     }
 
     .lead {
-      max-width: 560px;
-      margin: 25px 0 0;
-      color: #4d4942;
+      max-width: 540px;
+      margin: 26px 0 0;
+      color: #4d4943;
       font-size: clamp(17px, 2vw, 21px);
     }
 
@@ -128,7 +133,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 32px;
+      margin-top: 34px;
     }
 
     .button {
@@ -140,7 +145,7 @@
       border: 1px solid var(--ink);
       background: var(--ink);
       color: white;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     .button.secondary {
@@ -148,25 +153,69 @@
       color: var(--ink);
     }
 
-    .hero-photo {
+    .hero-art {
       position: relative;
-      align-self: stretch;
-      min-height: 520px;
-      background: var(--panel);
-      border: 12px solid #fffdf8;
-      box-shadow: var(--shadow);
-      overflow: hidden;
+      min-height: 560px;
     }
 
-    .hero-photo img {
+    .frame {
+      position: absolute;
+      background: var(--panel);
+      border: 12px solid #fdfbf5;
+      box-shadow: var(--shadow);
+      outline: 1px solid rgba(23, 23, 23, 0.12);
+    }
+
+    .frame.large {
+      inset: 22px 8% 38px 8%;
+      transform: rotate(-2deg);
+    }
+
+    .frame.small {
+      width: 36%;
+      aspect-ratio: 0.78;
+      right: 0;
+      bottom: 0;
+      transform: rotate(6deg);
+    }
+
+    .frame.tall {
+      width: 30%;
+      aspect-ratio: 0.7;
+      left: 0;
+      top: 0;
+      transform: rotate(4deg);
+    }
+
+    .artwork {
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      background: #ebe4d8;
+      min-height: 180px;
+    }
+
+    .composition-one {
+      background:
+        radial-gradient(circle at 28% 30%, #f5e0a8 0 11%, transparent 12%),
+        radial-gradient(circle at 70% 70%, #2f7d7a 0 16%, transparent 17%),
+        linear-gradient(130deg, transparent 0 42%, rgba(185, 71, 62, 0.9) 43% 57%, transparent 58%),
+        linear-gradient(90deg, #efe6d5 0 28%, #171717 28% 30%, #f7f3ec 30% 64%, #171717 64% 66%, #d8d0c3 66%);
+    }
+
+    .composition-two {
+      background:
+        linear-gradient(45deg, transparent 0 46%, #171717 47% 53%, transparent 54%),
+        linear-gradient(135deg, #b9473e 0 34%, #f1d179 34% 57%, #2f7d7a 57%);
+    }
+
+    .composition-three {
+      background:
+        radial-gradient(circle at 50% 44%, #171717 0 9%, transparent 10%),
+        repeating-linear-gradient(90deg, #f7f3ec 0 24px, #d9c5a0 24px 28px),
+        linear-gradient(#fbf8ef, #e7dfcf);
     }
 
     .section {
-      padding: 72px clamp(18px, 5vw, 76px);
+      padding: 76px clamp(18px, 5vw, 76px);
       border-top: 1px solid var(--line);
     }
 
@@ -189,6 +238,35 @@
       max-width: 520px;
       margin: 0;
       color: var(--muted);
+    }
+
+    .visit {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .hours {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hours li {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
     }
 
     .gallery-grid {
@@ -299,34 +377,6 @@
       box-shadow: 0 18px 60px rgba(0, 0, 0, 0.34);
     }
 
-    .details {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-
-    .details p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .meta-list {
-      display: grid;
-      gap: 12px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .meta-list li {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--line);
-    }
-
     footer {
       padding: 28px clamp(18px, 5vw, 76px);
       color: var(--muted);
@@ -339,22 +389,22 @@
         min-height: auto;
       }
 
-      .hero-photo {
-        min-height: 440px;
-      }
-
-      .gallery-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .hero-art {
+        min-height: 420px;
       }
 
       .section-heading,
-      .details {
+      .visit {
         display: block;
       }
 
       .section-heading p,
-      .details p {
+      .note {
         margin-top: 14px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -371,8 +421,11 @@
         font-size: 14px;
       }
 
-      .hero-photo {
+      .hero-art {
         min-height: 330px;
+      }
+
+      .frame {
         border-width: 8px;
       }
 
@@ -385,7 +438,7 @@
       }
 
       .piece-info,
-      .meta-list li {
+      .hours li {
         flex-direction: column;
         gap: 4px;
       }
@@ -404,33 +457,50 @@
       <span>网站美术馆</span>
     </a>
     <nav class="nav" aria-label="主导航">
-      <a href="#collection">作品</a>
-      <a href="#quality">高清</a>
-      <a href="#visit">信息</a>
+      <a href="#exhibition">展览</a>
+      <a href="#collection">照片</a>
+      <a href="#visit">参观</a>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow">HIGH RESOLUTION GALLERY / 2026</p>
-        <h1 id="hero-title">高清照片线上展厅</h1>
-        <p class="lead">照片以原始文件上传，页面展示时按屏幕自适应缩放。点击任意作品可进入全屏预览，也可以打开原图查看最大分辨率。</p>
+        <p class="eyebrow">ONLINE GALLERY / 2026</p>
+        <h1 id="hero-title">把一间安静的美术馆放进网页里</h1>
+        <p class="lead">这里展示抽象、色块、线条与留白。照片作品放在后面的展厅中，首页保持原来的美术馆气质。</p>
         <div class="actions">
-          <a class="button" href="#collection">浏览作品</a>
-          <a class="button secondary" href="#quality">查看规格</a>
+          <a class="button" href="#collection">浏览照片</a>
+          <a class="button secondary" href="#exhibition">当前展览</a>
         </div>
       </div>
 
-      <a class="hero-photo" href="#photo-dsc-9292" aria-label="打开第一张高清照片">
-        <img src="images/DSC_9292.jpg" alt="高清摄影作品 DSC_9292" loading="eager">
-      </a>
+      <div class="hero-art" aria-label="抽象艺术墙">
+        <div class="frame large"><div class="artwork composition-one"></div></div>
+        <div class="frame tall"><div class="artwork composition-three"></div></div>
+        <div class="frame small"><div class="artwork composition-two"></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="exhibition">
+      <div class="section-heading">
+        <h2>当前展览</h2>
+        <p>一次关于屏幕、空间和秩序的练习，让访问者先进入安静的网页美术馆，再继续浏览高清摄影作品。</p>
+      </div>
+      <div class="visit">
+        <p class="note">首页保留抽象构成作为入口，照片作为独立展区陈列。这样页面第一眼更像美术馆，而不是普通相册。</p>
+        <ul class="hours" aria-label="展览信息">
+          <li><strong>主题</strong><span>数字空间中的静物</span></li>
+          <li><strong>地点</strong><span>GitHub Pages</span></li>
+          <li><strong>状态</strong><span>高清照片已上线</span></li>
+        </ul>
+      </div>
     </section>
 
     <section class="section" id="collection">
       <div class="section-heading">
-        <h2>精选作品</h2>
-        <p>缩略视图保持完整画面比例，不裁切照片。进入大图后，浏览器会在当前屏幕内尽量显示最大尺寸。</p>
+        <h2>高清照片展厅</h2>
+        <p>照片不会占据首页。点击作品后可进入全屏预览，也可以打开原图查看最大分辨率。</p>
       </div>
 
       <div class="gallery-grid">
@@ -473,30 +543,15 @@
       </div>
     </section>
 
-    <section class="section" id="quality">
-      <div class="section-heading">
-        <h2>高清显示方式</h2>
-        <p>网页不会把图片压缩成低清版本。作品卡片和全屏预览都引用同一份原图文件。</p>
-      </div>
-      <div class="details">
-        <p>为了让浏览更顺滑，照片在列表中使用浏览器懒加载；当你点击作品时，会加载原图并在屏幕内完整显示。想查看原始尺寸，可以在大图页面点击“打开原图”。</p>
-        <ul class="meta-list" aria-label="照片规格">
-          <li><strong>作品数量</strong><span>6 张</span></li>
-          <li><strong>最高分辨率</strong><span>6048 x 4024</span></li>
-          <li><strong>展示方式</strong><span>完整比例，不裁切</span></li>
-        </ul>
-      </div>
-    </section>
-
     <section class="section" id="visit">
       <div class="section-heading">
-        <h2>发布信息</h2>
-        <p>这个网站发布在 GitHub Pages，更新照片或文字后可以继续上传到同一个仓库。</p>
+        <h2>参观信息</h2>
+        <p>发布后，你可以把这个页面作为个人美术馆、作品集入口，或继续扩展成多页面网站。</p>
       </div>
-      <ul class="meta-list">
-        <li><strong>网站</strong><span>GitHub Pages</span></li>
-        <li><strong>仓库</strong><span>GithubTOT/E5bab7_2026.github.io</span></li>
-        <li><strong>状态</strong><span>高清照片版</span></li>
+      <ul class="hours">
+        <li><strong>周一至周五</strong><span>09:00 - 18:00</span></li>
+        <li><strong>周末</strong><span>全天在线</span></li>
+        <li><strong>门票</strong><span>免费访问</span></li>
       </ul>
     </section>
   </main>
