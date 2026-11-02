@@ -1,0 +1,107 @@
+#collection .gallery-year,
+#collection .gallery-month {
+  border-top: 1px solid var(--line);
+}
+
+#collection summary {
+  padding: 16px 0;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+}
+
+#collection summary:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 4px;
+}
+
+#collection summary .photo-count {
+  margin-left: 12px;
+  color: #827b72;
+  font-size: 12px;
+}
+
+#collection .gallery-year > summary {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+#collection .gallery-month {
+  margin-left: 18px;
+}
+
+#collection .gallery-day {
+  margin: 0 0 28px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+#collection .gallery-day-heading {
+  padding: 0;
+  border: 0;
+}
+
+#collection .gallery-day-heading h3 {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+#collection .piece {
+  position: relative;
+}
+
+#collection .piece > a {
+  display: block;
+  height: 100%;
+}
+
+#collection .piece-image {
+  height: clamp(240px, 34vw, 440px);
+  border: 0;
+}
+
+#collection .piece-info {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  left: 8px;
+  z-index: 1;
+  padding: 12px;
+  color: #fff;
+  background: rgba(23, 23, 23, 0.94);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 140ms ease;
+}
+
+#collection .piece.is-info-visible .piece-info {
+  visibility: visible;
+  opacity: 1;
+}
+
+#collection .photo-meta,
+#collection .photo-meta dt {
+  color: #fff;
+}
+
+#collection .photo-meta dt {
+  min-width: 36px;
+  color: #d8d0c3;
+  font-weight: 400;
+}
+
+#collection .photo-meta dd {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 580px) {
+  #collection .gallery-month { margin-left: 8px; }
+  #collection .piece-image { height: 320px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #collection .piece-info { transition: none; }
+}
